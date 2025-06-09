@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark Add</title>
+    <link rel="stylesheet" href="/bookmark-add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <a th:href="@{/bookmarks/list}" class="back">
+            <i class="fa-solid fa-backward" style="color: #74C0FC;"></i> Back to Dashboard
+        </a>
+    </header>
+    <div class="form-container">
+        <h1>Add a new Bookmark</h1>
+        <form action="#" th:action="@{/bookmarks/save}" th:object="${bookmark}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="title cover">
+               <i class="fa-regular fa-bookmark"></i>
+                <input type="text" th:field="*{title}" placeholder="Bookmark Name">
+            </div>
+
+            <div class="url cover">
+               <i class="fa-solid fa-link"></i>
+                <input type="text" th:field="*{url}" placeholder="URL">
+            </div>
+
+            <div class="desc cover">
+               <i class="fa-regular fa-comment"></i>
+                <textarea type="text" th:field="*{description}" placeholder="Description"></textarea>
+            </div>
+
+            <input type="submit" value="Bookmark" class="submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

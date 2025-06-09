@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font1: "Roboto", sans-serif
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #0F2027;
+    background: #141E30;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+
+header {
+    width:100%;
+    height:5%;
+    position:absolute;
+    top:0;
+    left:0;
+    padding: 0 10px;
+    display:flex;
+    align-items:center;
+    border-bottom: 2px solid gray;
+}
+
+header .back {
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size:20px;
+}
+
+
+
+.form-container {
+    /* background-color: red; */
+    padding: 10px;
+}
+
+h1 {
+    font-family: var(--font1);
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 500px;
+    height: 300px;
+    border: 2px solid #243B55;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    align-items: center;
+    gap: 15px;
+    /* justify-content: center; */
+}
+
+.cover {
+    width: 70%;
+    height: 20%;
+    background-color: #141E30;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.cover input {
+    height: 100%;
+    width: 90%;
+    background: transparent;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    border-left: 2px solid white;
+    margin-right: 5px;
+    caret-color: white;
+    font-size: 16px;
+    color: white;
+}
+
+.cover i {
+    padding-right: 5px;
+}
+
+.title input {
+    margin-left: 10px;
+}
+
+.url input {
+    margin-left: 2px;
+}
+
+.desc {
+    height: 27%;
+}
+
+.desc textarea {
+    height: 100%;
+    width: 90%;
+    background: transparent;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+    border-left: 2px solid white;
+    margin-right: 5px;
+    caret-color: white;
+    font-size: 15px;
+    color: white;
+    margin-left: 7px;
+    resize: none;
+}
+
+.submit {
+    padding: 5px 20px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit:hover{
+    padding: 5px 23px;
+    transition: all .3s linear;
+}

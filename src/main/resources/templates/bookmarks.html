@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark List</title>
+    <link rel="stylesheet" href="/bookmarks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body>
+<header>
+    <h1 class="logo">BookMark List</h1>
+</header>
+<main>
+    <a class="add" th:href="@{/bookmarks/add}">Add Bookmark</a>
+    <div class="card-container">
+        <div class="card" th:each="bookmark:${bookmarks}">
+            <a th:href="${bookmark.url}" target="_blank">
+                <p class="title" th:text="${bookmark.title}"></p>
+                <p class="desc" th:text="${bookmark.description}"></p>
+            </a>
+            <div class="btns">
+                <!--For Update-->
+                <a th:href="@{/bookmarks/update(bookmarkId = ${bookmark.id})}">
+                    <i class="fa-solid fa-pen-to-square" style="color: #74C0FC;"></i>
+                </a>
+
+                <!--    For Delete Button-->
+                <a th:href="@{/bookmarks/delete(bookmarkId = ${bookmark.id})}"
+                   onclick="if(!(confirm('Are you sure you want to delete this Bookmark?'))) return false;">
+                    <i class="fa-solid fa-trash" style="color: #bf0836;"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</main>
+</body>
+
+</html>
