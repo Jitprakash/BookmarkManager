@@ -25,22 +25,23 @@ public class SecurityConfig {
         return manager;
     }
 
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-//        http
-//                .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/bookmarks/**").authenticated() // Require login for bookmark-related requests
-//                        .anyRequest().permitAll() // Allow public access to other endpoints
-//                );
-////                .formLogin(form -> form
-////                        .loginPage("/login") // Custom login page
-////                        .permitAll()
-////                )
-////                .logout(logout -> logout
-////                        .logoutUrl("/logout")
-////                        .permitAll()
-////                )
-//
-//        return http.build();
-//    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/bookmarks/**").authenticated() // Require login for bookmark-related requests
+                        .anyRequest().permitAll() // Allow public access to other endpoints
+                )
+                .formLogin(form -> form
+                        .loginPage("/login") // Custom login page
+                        .loginProcessingUrl("/authenticateTheUser")//- → Defines the URL Spring Security uses for processing the login form.- Spring handles authentication automatically—no need to manually check usernames and passwords.
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .permitAll()
+                );
+
+        return http.build();
+    }
 }
