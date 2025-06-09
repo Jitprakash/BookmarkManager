@@ -58,7 +58,5 @@ public class BookmarkController {
     }
 }
 
-//TODO->Update the Database ,
-// ->add user auth,
-// ->add a user-id as foreign key,
-// ->register uset
+//TODO->Login page, Registration page
+// ->fetch bookmarks with user
