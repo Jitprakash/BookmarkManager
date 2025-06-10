@@ -9,8 +9,29 @@ body{
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
+}
+
+.logged-msg{
+padding:5px 10px;
+border: 2px solid #7FFFD4;
+border-radius:5px;
+color:white;
+background: #00CED1;
+margin-bottom:2rem;
+font-size:20px;
+}
+
+.error-msg{
+padding:5px 10px;
+border: 2px solid #CD5C5C;
+border-radius:5px;
+color:white;
+background: #F08080;
+margin-bottom:2rem;
+font-size:20px;
 }
 
 .container{

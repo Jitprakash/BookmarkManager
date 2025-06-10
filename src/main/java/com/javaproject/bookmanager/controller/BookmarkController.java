@@ -58,6 +58,6 @@ public class BookmarkController {
     }
 }
 
-//TODO->logout handling, Registration page
+//TODO-> Registration page
 // ->fetch bookmarks with user
 // ->add the bookmark with user id

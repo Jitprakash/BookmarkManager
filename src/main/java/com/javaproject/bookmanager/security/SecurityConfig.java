@@ -35,12 +35,10 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login") // Custom login page
                         .loginProcessingUrl("/authenticateTheUser")//- → Defines the URL Spring Security uses for processing the login form.- Spring handles authentication automatically—no need to manually check usernames and passwords.
+                        .defaultSuccessUrl("/bookmarks/list", true) // <- Redirect after login
                         .permitAll()
                 )
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .permitAll()
-                );
+                .logout(logout -> logout.permitAll());
 
         return http.build();
     }

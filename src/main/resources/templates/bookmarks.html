@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +14,12 @@
 <body>
 <header>
     <h1 class="logo">BookMark List</h1>
-    <a th:href="@{/logout}"> logout </a>
+    <div class="right-header">
+        <span sec:authentication="principal.username" class="user"></span>
+        <form th:action="@{/logout}" method="post">
+            <button class="logout" type="submit">Logout</button>
+        </form>
+    </div>
 </header>
 <main>
     <a class="add" th:href="@{/bookmarks/add}">Add Bookmark</a>

@@ -30,10 +30,41 @@ header {
     display: flex;
     align-items: center;
     padding: 0 10px;
+    justify-content: space-between;
 }
 
 .logo {
     font-family: var(--font1);
+}
+
+.right-header{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.logout{
+    font-size:17px;
+    padding:5px 13px;
+    background-color:red;
+    color: black;
+    font-weight:600;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+.user{
+        font-size: 16px;
+        padding: 5px 15px;
+        background-color: #7fffd457;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        letter-spacing: 3px;
+        text-transform: uppercase;
 }
 
 main {
